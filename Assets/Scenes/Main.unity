@@ -689,7 +689,7 @@ Transform:
   m_LocalPosition: {x: 0, y: -3.5, z: -11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2095810435}
+  m_Father: {fileID: 1890126997}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &168695419
@@ -1678,7 +1678,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2095810435}
+  m_Father: {fileID: 1890126997}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &414188492
@@ -1966,7 +1966,7 @@ Transform:
   - {fileID: 177971173}
   - {fileID: 870901696}
   - {fileID: 780951116}
-  m_Father: {fileID: 2095810435}
+  m_Father: {fileID: 1890126997}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &520279351
@@ -4893,7 +4893,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1368724005}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.075393, y: 1.4072385, z: -6.920621}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5697,7 +5697,7 @@ Transform:
   - {fileID: 2020280546}
   - {fileID: 1601274936}
   - {fileID: 539344697}
-  m_Father: {fileID: 2095810435}
+  m_Father: {fileID: 1890126997}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1660088343
@@ -6468,6 +6468,55 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1875019297}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1890126996
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1890126997}
+  - component: {fileID: 1890126998}
+  m_Layer: 0
+  m_Name: Board1P
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1890126997
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890126996}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 168695418}
+  - {fileID: 407863605}
+  - {fileID: 502282424}
+  - {fileID: 1654344609}
+  - {fileID: 96355673}
+  m_Father: {fileID: 2095810435}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1890126998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890126996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cf80cb3250cdaf4c9a2708209434c8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PuyoPrefab: {fileID: 5808125299195055144, guid: 1eaee79bb750861458e152cbda634b77, type: 3}
 --- !u!1 &1899428485
 GameObject:
   m_ObjectHideFlags: 0
@@ -7071,11 +7120,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 168695418}
-  - {fileID: 407863605}
-  - {fileID: 502282424}
-  - {fileID: 1654344609}
-  - {fileID: 96355673}
+  - {fileID: 1890126997}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7180,11 +7225,15 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2095810435}
+    m_TransformParent: {fileID: 1890126997}
     m_Modifications:
     - target: {fileID: 5808125299195055144, guid: 1eaee79bb750861458e152cbda634b77, type: 3}
       propertyPath: m_Name
       value: Puyo
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808125299195055144, guid: 1eaee79bb750861458e152cbda634b77, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5808125299195055145, guid: 1eaee79bb750861458e152cbda634b77, type: 3}
       propertyPath: m_RootOrder

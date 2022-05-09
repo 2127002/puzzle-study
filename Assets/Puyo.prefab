@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5808125299195055145
 Transform:
   m_ObjectHideFlags: 0
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: aceb9fc03be6edc4a8c5316a97792b6d, type: 2}
+  - {fileID: 2100000, guid: 003cd8fcd7d142345be6b1f4d9ff6a22, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -109,3 +109,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bfca7309fe374d48a901b6d6104fbc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _puyoRenderer: {fileID: 5808125299195055147}

@@ -30,25 +30,68 @@ public enum ShapeType
 
 public class PuyoController : MonoBehaviour
 {
-    //色のデータは別箇所に定義
+    //色のマテリアルデータは別箇所に定義
+    private ColorType _puyoColor;
+    [SerializeField]
+    private Renderer _puyoRenderer = default!;
 
+    //固定中か
+    private bool _OnGround = false;
 
     /// <summary>
     /// 特定のポジションにオブジェクトを設定する
     /// </summary>
-    public void SetPos(float Row,float Column)
+    public void SetPos(float Width, float Height)
     {
         Vector3 newPos = new Vector3(DataSetting.dataSetting.KeyPosition.x
             + DataSetting.dataSetting.PosSize
-            * Row,
+            * Width,
             DataSetting.dataSetting.KeyPosition.y
             + DataSetting.dataSetting.PosSize
-            * -Column,
+            * -Height,
             0);
         newPos += DataSetting.dataSetting.KeyPosition;
 
         this.transform.position = newPos;
     }
 
+    private void OnEnable()
+    {
+        //正しい色データなら
+        if (ColorType.Default < puyoColor && puyoColor < ColorType.Unknown)
+        {
+            //色を設定する
+            puyoRenderer.material = DataSetting.dataSetting.MaterialMap[puyoColor];
+        }
+        else
+        {
+            Debug.LogError("PuyoColorData Error");
+            return;
+        }
+    }
 
+    public ColorType puyoColor
+    {
+        get
+        {
+            return _puyoColor;
+        }
+        set
+        {
+            _puyoColor = value;
+        }
+
+
+    }
+    public Renderer puyoRenderer
+    {
+        get
+        {
+            return _puyoRenderer;
+        }
+        set
+        {
+            _puyoRenderer = value;
+        }
+    }
 }
