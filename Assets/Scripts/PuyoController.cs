@@ -16,82 +16,39 @@ public enum ColorType
     Unknown
 }
 
-public enum ShapeType
-{
-    Default,
-
-    Single,
-    Double,
-    Triple,
-    Quadruple,
-
-    Unknown
-}
-
+[RequireComponent(typeof(Renderer))]
 public class PuyoController : MonoBehaviour
 {
-    //色のマテリアルデータは別箇所に定義
-    private ColorType _puyoColor;
     [SerializeField]
     private Renderer _puyoRenderer = default!;
+    private ColorType _type = ColorType.Unknown;
 
-    //固定中か
-    private bool _OnGround = false;
+    static readonly Color[] color_table = new Color[] {
+        Color.black,
 
-    /// <summary>
-    /// 特定のポジションにオブジェクトを設定する
-    /// </summary>
-    public void SetPos(float Width, float Height)
+        Color.red,
+        Color.blue,
+        Color.green,
+        Color.magenta,
+        Color.yellow,
+        Color.gray,
+
+        Color.white
+    };
+
+    public void SetPuyoType(ColorType type)
     {
-        Vector3 newPos = new Vector3(DataSetting.dataSetting.KeyPosition.x
-            + DataSetting.dataSetting.PosSize
-            * Width,
-            DataSetting.dataSetting.KeyPosition.y
-            + DataSetting.dataSetting.PosSize
-            * -Height,
-            0);
-        newPos += DataSetting.dataSetting.KeyPosition;
+        _type = type;
 
-        this.transform.position = newPos;
+        _puyoRenderer.material.color = color_table[(int)_type];
+    }
+    public ColorType GetColorType()
+    {
+        return _type;
     }
 
-    private void OnEnable()
+    public void SetPos(Vector3 pos)
     {
-        //正しい色データなら
-        if (ColorType.Default < puyoColor && puyoColor < ColorType.Unknown)
-        {
-            //色を設定する
-            puyoRenderer.material = DataSetting.dataSetting.MaterialMap[puyoColor];
-        }
-        else
-        {
-            Debug.LogError("PuyoColorData Error");
-            return;
-        }
-    }
-
-    public ColorType puyoColor
-    {
-        get
-        {
-            return _puyoColor;
-        }
-        set
-        {
-            _puyoColor = value;
-        }
-
-
-    }
-    public Renderer puyoRenderer
-    {
-        get
-        {
-            return _puyoRenderer;
-        }
-        set
-        {
-            _puyoRenderer = value;
-        }
+        this.transform.localPosition = pos;
     }
 }

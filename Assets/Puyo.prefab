@@ -12,14 +12,14 @@ GameObject:
   - component: {fileID: 5808125299195055148}
   - component: {fileID: 5808125299195055147}
   - component: {fileID: 5808125299195055146}
-  - component: {fileID: 8941421328980495063}
+  - component: {fileID: 5420132825238875180}
   m_Layer: 0
   m_Name: Puyo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5808125299195055145
 Transform:
   m_ObjectHideFlags: 0
@@ -97,7 +97,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8941421328980495063
+--- !u!114 &5420132825238875180
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
